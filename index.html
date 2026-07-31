@@ -3,10 +3,156 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Wesele — info</title>
+  <title>Nasze Wesele — informacje dla gości</title>
+  <style>
+    :root{
+      --bg:#faf7f2;
+      --card:#ffffff;
+      --ink:#3a3a3a;
+      --accent:#a67c52;
+      --accent-soft:#e8ddcf;
+      --line:#e6ddd1;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Georgia","Times New Roman",serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+    }
+    .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px}
+    header.hero{
+      text-align:center;
+      padding:48px 20px 32px;
+      border-bottom:2px solid var(--accent-soft);
+      margin-bottom:8px;
+    }
+    header.hero .kicker{
+      letter-spacing:.35em;
+      text-transform:uppercase;
+      font-size:.72rem;
+      color:var(--accent);
+      margin:0 0 12px;
+    }
+    header.hero h1{
+      font-size:2.6rem;
+      margin:0 0 8px;
+      font-weight:400;
+    }
+    header.hero .date{
+      font-size:1.05rem;
+      color:var(--accent);
+    }
+    section.card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:24px 26px;
+      margin:20px 0;
+      box-shadow:0 2px 10px rgba(0,0,0,.03);
+    }
+    section.card h2{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:1.35rem;
+      font-weight:400;
+      margin:0 0 14px;
+      padding-bottom:10px;
+      border-bottom:1px solid var(--line);
+    }
+    section.card h2 .ico{font-size:1.4rem}
+    .placeholder{
+      color:#b0a595;
+      font-style:italic;
+    }
+    table.stay{width:100%;border-collapse:collapse;margin-top:6px}
+    table.stay th,table.stay td{
+      text-align:left;
+      padding:8px 10px;
+      border-bottom:1px solid var(--line);
+      vertical-align:top;
+    }
+    table.stay th{color:var(--accent);font-weight:400;font-size:.9rem}
+    footer{
+      text-align:center;
+      color:#b0a595;
+      font-size:.8rem;
+      margin-top:40px;
+    }
+    /* --- Druk --- */
+    @media print{
+      body{background:#fff}
+      section.card{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
+      .wrap{max-width:100%}
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello World 👋</h1>
-  <p>Test GitHub Pages — jeśli to widzisz, deploy działa.</p>
+  <div class="wrap">
+
+    <header class="hero">
+      <p class="kicker">Zapraszamy na nasze wesele</p>
+      <h1><span class="placeholder">Imię &amp; Imię</span></h1>
+      <p class="date"><span class="placeholder">data · miejsce</span></p>
+    </header>
+
+    <section class="card" id="para">
+      <h2><span class="ico">💍</span> Para Młoda</h2>
+      <p class="placeholder">Kilka słów powitania od pary młodej…</p>
+    </section>
+
+    <section class="card" id="ceremonia">
+      <h2><span class="ico">⛪</span> Ceremonia</h2>
+      <p class="placeholder">Data, godzina i miejsce ceremonii…</p>
+    </section>
+
+    <section class="card" id="przyjecie">
+      <h2><span class="ico">🥂</span> Przyjęcie</h2>
+      <p class="placeholder">Nazwa sali, adres, godzina rozpoczęcia…</p>
+    </section>
+
+    <section class="card" id="harmonogram">
+      <h2><span class="ico">🕐</span> Harmonogram dnia</h2>
+      <p class="placeholder">Przebieg dnia godzina po godzinie…</p>
+    </section>
+
+    <section class="card" id="noclegi">
+      <h2><span class="ico">🛏️</span> Noclegi</h2>
+      <p class="placeholder">Kto gdzie nocuje — tabela poniżej.</p>
+      <table class="stay">
+        <thead>
+          <tr><th>Goście / grupa</th><th>Miejsce noclegu</th><th>Adres / info</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="placeholder">…</td><td class="placeholder">…</td><td class="placeholder">…</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="dojazd">
+      <h2><span class="ico">🚗</span> Dojazd i parking</h2>
+      <p class="placeholder">Jak dojechać, gdzie parkować…</p>
+    </section>
+
+    <section class="card" id="dresscode">
+      <h2><span class="ico">👗</span> Dress code</h2>
+      <p class="placeholder">Sugerowany strój, kolory…</p>
+    </section>
+
+    <section class="card" id="zabrac">
+      <h2><span class="ico">🎒</span> Co zabrać ze sobą</h2>
+      <ul>
+        <li>🩱 Stroje kąpielowe</li>
+        <li class="placeholder">…kolejne rzeczy…</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Do zobaczenia! 💛</p>
+    </footer>
+
+  </div>
 </body>
 </html>
