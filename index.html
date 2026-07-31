@@ -81,32 +81,11 @@
       font-size:.8rem;
       margin-top:40px;
     }
-    /* --- Rozwijane scenariusze transportu --- */
-    details.scenario{
-      border:1px solid var(--line);
-      border-radius:10px;
-      margin:10px 0;
-      overflow:hidden;
-      background:#fff;
-    }
-    details.scenario > summary{
-      cursor:pointer;
-      padding:12px 16px;
-      font-size:1rem;
-      color:var(--accent);
-      background:var(--accent-soft);
-      list-style:none;
-    }
-    details.scenario > summary::-webkit-details-marker{display:none}
-    details.scenario > summary::before{content:"▸ ";}
-    details.scenario[open] > summary::before{content:"▾ ";}
-    details.scenario .body{padding:14px 16px}
     /* --- Druk --- */
     @media print{
       body{background:#fff}
       section.card{box-shadow:none;break-inside:avoid;page-break-inside:avoid}
       .wrap{max-width:100%}
-      details.scenario[open] .body,details.scenario .body{display:block}
     }
   </style>
 </head>
@@ -139,78 +118,64 @@
       <p>Każdy ma inny plan — znajdź siebie w tabeli. „Nocleg" to miejsce, gdzie śpisz; „Transport" oznacza, że dowozimy Cię my.</p>
       <table class="stay">
         <thead>
-          <tr><th>Gość</th><th>Stolik</th><th>Nocleg</th><th>Pokój</th><th>Transport</th></tr>
+          <tr><th>Gość</th><th>Stolik</th><th>Nocleg</th><th>Nocleg w piątek</th><th>Pokój</th><th>Transport</th></tr>
         </thead>
         <tbody>
-          <tr><td>Dariusz Kudłacik</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Beata Korpacka</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Karolina Korpacka</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Katarzyna Gągola</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Paweł Mrzygłod</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Dziadek Roman</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Babcia Halina</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Dziadek Władek</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Babcia Marysia</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Grzegorz Kudłacik</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Rafał Kudłacik</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Urszula Kudłacik</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Anna Wroniak</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Michał „Hajer” Kołaczyk</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Bartek Bogacz</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Justyna Bogacz</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Anna Dworczyk</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-przed" class="scen-link">Rycerska: nocleg w przeddzień</a></td></tr>
-          <tr><td>Kacper Dworczyk</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-przed" class="scen-link">Rycerska: nocleg w przeddzień</a></td></tr>
-          <tr><td>Piotr Sordyl</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-przed" class="scen-link">Rycerska: nocleg w przeddzień</a></td></tr>
-          <tr><td>Izabella Sordyl</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-przed" class="scen-link">Rycerska: nocleg w przeddzień</a></td></tr>
-          <tr><td>Bartosz Sumper</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Justyna Mroczek</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Jakub Łysoń</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Anna Łysoń</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Adam Boniecki</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-noc" class="scen-link">Rycerska: noc imprezy</a></td></tr>
-          <tr><td>Thanos Chanias</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-noc" class="scen-link">Rycerska: noc imprezy</a></td></tr>
-          <tr><td>Joanna Wroniak</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Przemek Toś</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-noc" class="scen-link">Rycerska: noc imprezy</a></td></tr>
-          <tr><td>Kuba Wroniak</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Rode Gläsel</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-noc" class="scen-link">Rycerska: noc imprezy</a></td></tr>
-          <tr><td>Alex Vlaicu</td><td>—</td><td>Rycerska</td><td>—</td><td><a href="#s-rycerska-noc" class="scen-link">Rycerska: noc imprezy</a></td></tr>
-          <tr><td>Olga Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Andrzej Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Damian Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td>🚐 Dowozimy</td></tr>
-          <tr><td>Kacper Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Emilia Przetacznik</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Aleksander Przetacznik</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Renata Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Adam Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Babcia Marysia Poręba</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Babcia Stefcia</td><td>—</td><td>—</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Justyna Mlyczyńska</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Mariusz Mlyczyński</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Dominika Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Daria Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Roman Kundera</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Dawid Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Zuzia Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Nikola Poręba</td><td>—</td><td>Garden Loft</td><td>—</td><td>🚐 Dowozimy</td></tr>
-          <tr><td>Julia Półtorak</td><td>—</td><td>Garden Loft</td><td>—</td><td>🚐 Dowozimy</td></tr>
-          <tr><td>Janek Suchocki</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Kamil Plichta</td><td>—</td><td>Garden Loft</td><td>—</td><td><a href="#s-wlasny" class="scen-link">Dojazd własny</a></td></tr>
-          <tr><td>Gabriela Kubała</td><td>—</td><td>Garden Loft</td><td>—</td><td>🚐 Dowozimy</td></tr>
+          <tr><td>Dariusz Kudłacik</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Beata Korpacka</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Karolina Korpacka</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Katarzyna Gągola</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Paweł Mrzygłod</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Dziadek Roman</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Babcia Halina</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Dziadek Władek</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Babcia Marysia</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Grzegorz Kudłacik</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Rafał Kudłacik</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Urszula Kudłacik</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Anna Wroniak</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Michał „Hajer” Kołaczyk</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Bartek Bogacz</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Justyna Bogacz</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Anna Dworczyk</td><td>—</td><td>Rycerska</td><td>TAK</td><td>—</td><td>—</td></tr>
+          <tr><td>Kacper Dworczyk</td><td>—</td><td>Rycerska</td><td>TAK</td><td>—</td><td>—</td></tr>
+          <tr><td>Piotr Sordyl</td><td>—</td><td>Rycerska</td><td>TAK</td><td>—</td><td>—</td></tr>
+          <tr><td>Izabella Sordyl</td><td>—</td><td>Rycerska</td><td>TAK</td><td>—</td><td>—</td></tr>
+          <tr><td>Bartosz Sumper</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Justyna Mroczek</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Jakub Łysoń</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Anna Łysoń</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Adam Boniecki</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Thanos Chanias</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Joanna Wroniak</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Przemek Toś</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Kuba Wroniak</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Rode Gläsel</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Alex Vlaicu</td><td>—</td><td>Rycerska</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Olga Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Andrzej Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Damian Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>🚐 Dowozimy</td></tr>
+          <tr><td>Kacper Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Emilia Przetacznik</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Aleksander Przetacznik</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Renata Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Adam Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Babcia Marysia Poręba</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Babcia Stefcia</td><td>—</td><td>—</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Justyna Mlyczyńska</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Mariusz Mlyczyński</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Dominika Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Daria Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Roman Kundera</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Dawid Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Zuzia Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Nikola Poręba</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>🚐 Dowozimy</td></tr>
+          <tr><td>Julia Półtorak</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>🚐 Dowozimy</td></tr>
+          <tr><td>Janek Suchocki</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Kamil Plichta</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>—</td></tr>
+          <tr><td>Gabriela Kubała</td><td>—</td><td>Garden Loft</td><td>NIE</td><td>—</td><td>🚐 Dowozimy</td></tr>
         </tbody>
       </table>
-
-      <h3 style="font-weight:400;margin:22px 0 6px">Scenariusze transportu</h3>
-      <details class="scenario" id="s-wlasny">
-        <summary>🚗 Dojazd własny</summary>
-        <div class="body"><p class="placeholder">…tu wpiszemy szczegóły dojazdu własnego (adres, parking, mapa)…</p></div>
-      </details>
-      <details class="scenario" id="s-rycerska-noc">
-        <summary>🏰 Rycerska: nocleg tylko w noc imprezy</summary>
-        <div class="body"><p class="placeholder">…szczegóły dla nocujących tylko w noc imprezy…</p></div>
-      </details>
-      <details class="scenario" id="s-rycerska-przed">
-        <summary>🏰 Rycerska: nocleg też w przeddzień (goście z dalsza)</summary>
-        <div class="body"><p class="placeholder">…szczegóły dla nocujących również w przeddzień…</p></div>
-      </details>
     </section>
 
     <section class="card" id="dresscode">
@@ -227,15 +192,5 @@
     </footer>
 
   </div>
-  <script>
-    function openTargetScenario(){
-      var id=location.hash.slice(1);
-      if(!id) return;
-      var el=document.getElementById(id);
-      if(el && el.tagName.toLowerCase()==="details"){ el.open=true; el.scrollIntoView({behavior:"smooth",block:"center"}); }
-    }
-    window.addEventListener("hashchange",openTargetScenario);
-    window.addEventListener("DOMContentLoaded",openTargetScenario);
-  </script>
 </body>
 </html>
